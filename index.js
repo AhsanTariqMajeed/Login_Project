@@ -31,6 +31,6 @@ app.use(passport.session());
 //Routes
 app.use("/", require("./routes/login"));
 
-const PORT = process.env.PORT || 4111;
+const PORT = process.env.PORT || 8080;
 
 app.listen(PORT, console.log("Server has started at port " + PORT));
