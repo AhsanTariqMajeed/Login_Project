@@ -15,7 +15,7 @@ const registerUser = (req, res) => {
     window.alert("Fill empty fields");
 
   }
- 
+
   if (password !== confirm) {
     console.log("Password must match");
     window.alert("Password must match");
@@ -43,7 +43,7 @@ const registerUser = (req, res) => {
           password,
         });
 
-        
+
         bcrypt.genSalt(10, (err, salt) =>
           bcrypt.hash(newUser.password, salt, (err, hash) => {
             if (err) throw err;
@@ -69,7 +69,7 @@ const loginUser = (req, res) => {
   if (!email || !password) {
     window.alert("Please fill in all the fields");
     console.log("Please fill in all the fields");
-    
+
     res.render("login", {
       email,
       password,

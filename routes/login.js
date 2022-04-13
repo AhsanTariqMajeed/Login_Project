@@ -5,7 +5,7 @@ const {
   loginView,
   registerUser,
   loginUser,
-  
+
 } = require("../controllers/loginController");
 const { dashboardView } = require("../controllers/dashboardController");
 const { protectRoute } = require("../auth/protect");
