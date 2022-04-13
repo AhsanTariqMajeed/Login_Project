@@ -12,7 +12,7 @@ const registerUser = (req, res) => {
   const { name, email, location, password, confirm } = req.body;
   if (!name || !email || !password || !confirm) {
     console.log("Fill empty fields");
-    window.alert("Password must match");
+    window.alert("Fill empty fields");
 
   }
  
@@ -67,8 +67,9 @@ const loginUser = (req, res) => {
   const { email, password } = req.body;
   //Required
   if (!email || !password) {
-    console.log("Please fill in all the fields");
     window.alert("Please fill in all the fields");
+    console.log("Please fill in all the fields");
+    
     res.render("login", {
       email,
       password,
