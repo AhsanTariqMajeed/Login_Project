@@ -12,10 +12,7 @@ const UserSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
- location: {     
-   type: String,    
-   default: "Pakistan",
-   },
+ 
   date: {
     type: Date,
     default: Date.now,
