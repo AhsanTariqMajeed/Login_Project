@@ -12,7 +12,7 @@ loginCheck(passport);
 const database = process.env.MONGOLAB_URI;
 mongoose
   .connect(database, { useUnifiedTopology: true, useNewUrlParser: true })
-  .then(() => console.log("e don connect"))
+  .then(() => console.log("everything connected perfectly"))
   .catch((err) => console.log(err));
 
 app.set("view engine", "ejs");
