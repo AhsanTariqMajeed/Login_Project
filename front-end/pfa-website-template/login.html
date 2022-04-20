@@ -1,0 +1,87 @@
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+
+            <style>
+                body {
+                    background-color: white;
+                }
+
+                h1 {
+                    color: whitesmoke;
+                    font-weight: 400;
+                    font-style: normal;
+                    font-family: 'Times New Roman', Times, serif;
+                }
+
+                h5 {
+                    color: black;
+
+                    font-weight: 400;
+                    font-style: normal;
+                    font-family: 'Times New Roman', Times, serif;
+                }
+
+                .card {
+                    background-color: #F08080;
+                    border-radius: 30px;
+                    margin: 81px;
+                    padding: 60;
+                    size: 40px;
+
+                }
+            </style>
+
+            <br><br><br><br>
+            <center>
+                <h1>Login Authentication</h1>
+            </center>
+
+            <div class="card">
+
+                <div class="card-body">
+
+                    <form class="form-horizontal" method="post" action="/login">
+
+                        <div class="form-group">
+                            <label for="email" class="cols-sm-2 control-label">Your Email</label>
+                            <div class="cols-sm-10">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="fa fa-envelope fa"
+                                            aria-hidden="true"></i></span>
+                                    <input type="text" class="form-control" name="email" id="email"
+                                        placeholder="Enter your Email" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="password" class="cols-sm-2 control-label">Password</label>
+                            <div class="cols-sm-10">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="fa fa-lock fa-lg"
+                                            aria-hidden="true"></i></span>
+                                    <input type="password" class="form-control" name="password" id="password"
+                                        placeholder="Enter your Password" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group ">
+                            <button type="submit"
+                                class="btn btn-primary btn-lg btn-block login-button">Login</button>
+                        </div>
+                        <div class="login-register">
+                            <a href="/register">Register</a>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+
+</html>
