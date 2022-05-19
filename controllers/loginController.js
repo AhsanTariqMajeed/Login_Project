@@ -82,9 +82,43 @@ const loginUser = (req, res) => {
     })(req, res);
   }
 };
+
+
+const forgetpassword = (req, res) => {
+	res.render("forget", {});
+};
+
+const forgetpassword__ = (req, res) => {
+	const { email, password } = req.body.email
+  {
+		if (!data) {
+			res.send({ "Success": "This Email Is not regestered!" });
+		} else {
+			if (req.body.password == req.body.passwordConf) {
+				data.password = req.body.password;
+				data.passwordConf = req.body.passwordConf;
+
+				data.save((err, Person) => {
+					if (err)
+						console.log(err);
+					else
+						console.log('Success');
+					res.send({ "Success": "Password changed!" });
+				});
+			} else {
+				res.send({ "Success": "Password does not matched! Both Password should be same." });
+			}
+		}
+	};
+
+
+
 module.exports = {
   registerView,
   loginView,
   registerUser,
   loginUser,
-};
+  forgetpassword,
+  forgetpassword__,
+
+}};
