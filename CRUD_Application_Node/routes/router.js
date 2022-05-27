@@ -5,13 +5,33 @@ const User = require('../model/model.js');
 const services = require('../services/render');
 const controller = require('../controller/controller');
 
+const {
+  registerView,
+  loginView,
+  registerUser,
+  loginUser,
 
-route.get('/reg', (req, res, next) => {
-	return res.render('home.ejs');
+
+} = require("../controller/loginController");
+const { dashboardView } = require("../controller/dashboardController");
+const { protectRoute } = require("../auth/protect");
+
+
+
+route.get("/register", registerView);
+route.get("/login", loginView);
+//Dashboard
+route.get("/dashboard", protectRoute, dashboardView);
+
+route.post("/register", registerUser);
+route.post("/login", loginUser);
+
+route.get('/register', (req, res, next) => {
+	return res.render('register.ejs');
 });
 
 
-route.post('/reg', (req, res, next) => {
+route.post('/register', (req, res, next) => {
 	let personInfo = req.body;
 
 	if (!personInfo.email || !personInfo.username || !personInfo.password || !personInfo.passwordConf) {
@@ -124,11 +144,11 @@ route.get('/EditProfile', (req, res, next) => {
 });
 
 
-route.get('/forgetpass', (req, res, next) => {
+route.get('/forget', (req, res, next) => {
 	res.render("forget.ejs");
 });
 
-route.post('/forgetpass', (req, res, next) => {
+route.post('/forget', (req, res, next) => {
 	User.findOne({ email: req.body.email }, (err, data) => {
 		if (!data) {
 			res.send({ "Success": "This Email Is not regestered!" });

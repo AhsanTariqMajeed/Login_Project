@@ -1,5 +1,4 @@
 <%- include('layout.ejs'); %>
-
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-8">
@@ -27,24 +26,33 @@
                     .card {
                         background-color: #F08080;
                         border-radius: 30px;
-                        margin: 81px;
+                        margin: 80px;
                         padding: 60;
                         size: 40px;
 
                     }
                 </style>
-
                 <br><br><br><br>
                 <center>
-                    <h1>Login Authentication</h1>
+                    <h1>Register Authentication</h1>
                 </center>
-
                 <div class="card">
 
                     <div class="card-body">
 
-                        <form class="form-horizontal" method="post" action="/login">
+                        <form class="form-horizontal" method="post" action="/register">
 
+                            <div class="form-group">
+                                <label for="name" class="cols-sm-2 control-label">Your Name</label>
+                                <div class="cols-sm-10">
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="fa fa-user fa"
+                                                aria-hidden="true"></i></span>
+                                        <input type="text" class="form-control" name="name" id="name"
+                                            placeholder="Enter your Name" />
+                                    </div>
+                                </div>
+                            </div>
                             <div class="form-group">
                                 <label for="email" class="cols-sm-2 control-label">Your Email</label>
                                 <div class="cols-sm-10">
@@ -68,16 +76,24 @@
                                     </div>
                                 </div>
                             </div>
+                            <div class="form-group">
+                                <label for="confirm" class="cols-sm-2 control-label">Confirm Password</label>
+                                <div class="cols-sm-10">
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="fa fa-lock fa-lg"
+                                                aria-hidden="true"></i></span>
+                                        <input type="password" class="form-control" name="confirm" id="confirm"
+                                            placeholder="Confirm your Password" />
+                                    </div>
+                                </div>
+                            </div>
 
                             <div class="form-group ">
                                 <button type="submit"
-                                    class="btn btn-primary btn-lg btn-block login-button">Login</button>
+                                    class="btn btn-primary btn-lg btn-block login-button">Register</button>
                             </div>
                             <div class="login-register">
-                                <a href="http://localhost:3000/register">Register</a>
-                            </div>
-                            <div class="login-register">
-                                <a href="http://localhost:3000/forget">Forget password</a>
+                                <a href="/login">Go to Login</a>
                             </div>
                         </form>
                     </div>
